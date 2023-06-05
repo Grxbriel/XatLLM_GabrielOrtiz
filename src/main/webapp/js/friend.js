@@ -1,5 +1,5 @@
 
-function agregarAmigo() {
+function anadirAmigo() {
   let xhr = new XMLHttpRequest();
   let mail = sessionStorage.getItem("mail");
   let session = sessionStorage.getItem("session");
@@ -18,11 +18,11 @@ function agregarAmigo() {
           alert("Se ha agregado correctamente");
           break;
         case "2":
-          alert("No se encuentra al amigo especificado");
+          alert("No se encuentra al amigo");
           break;
 
         case "3":
-          alert("El codigo de sesión ha expirado debe loguearse nuevamente");
+          alert("La sesión ha expirado debe iniciar sesion otra vez");
           break;
       }
     }
@@ -36,7 +36,7 @@ function agregarAmigo() {
   xhr.send(url);
 }
 
-function recibirListaDeAmigos() {
+function recibirListaAmigos() {
   let xhr = new XMLHttpRequest();
   let mail = sessionStorage.getItem("mail");
   let session = sessionStorage.getItem("session");

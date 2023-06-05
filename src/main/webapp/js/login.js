@@ -1,11 +1,11 @@
 // Logeo de usuarios
 
-function getAtribute() {
+function obtenerMail() {
   document.getElementById("mail").value = sessionStorage.getItem("mail");
   sessionStorage.clear();
 }
 
-function doLogin() {
+function iniciarSesion() {
   var xhr = new XMLHttpRequest();
   let mail = document.getElementById("mail").value;
   let pass = document.getElementById("pass").value;

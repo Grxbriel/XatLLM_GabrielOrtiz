@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pagina de Usuario</title>
+    <title>Chat</title>
     <link rel="stylesheet" type="text/css" href="../css/xat.css">
 </head>
 <body>
     <h1>CHAT</h1>
 
     <input type="email" name="friendMail" id="friendMail" />
-    <button onclick="agregarAmigo()">Agregar amigo</button>
+    <button onclick="anadirAmigo()">Agregar amigo</button>
 
     <!-- Lista de amigos -->
     <select name="receptor" id="receptor" onchange="modificarTarget()">
         <!-- Opciones del backend -->
     </select>
     <br>
-    <button onclick="recibirListaDeAmigos()">Mostrar Amigos</button><br>
+    <button onclick="recibirListaAmigos()">Mostrar Amigos</button><br>
     <br>  
     <br>
     <button onclick="logout()">Cerrar Sesion</button><br><br>

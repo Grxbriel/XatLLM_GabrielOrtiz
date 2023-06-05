@@ -1,0 +1,53 @@
+/* Estilos para el cuerpo de la página */
+body {
+  background-color: #f2f2f2; /* Color de fondo */
+  font-family: Arial, sans-serif; /* Fuente de texto */
+  color: #333333; /* Color de texto */
+  margin: 0; /* Elimina los márgenes del cuerpo */
+  padding: 20px; /* Añade un espacio interno al cuerpo */
+}
+
+/* Estilos para el encabezado */
+h1 {
+  font-size: 24px; /* Tamaño de fuente del encabezado */
+  margin-bottom: 20px; /* Espacio inferior del encabezado */
+}
+
+/* Estilos para los botones */
+button {
+  background-color: #4CAF50; /* Color de fondo del botón */
+  color: white; /* Color de texto del botón */
+  padding: 10px 20px; /* Espacio interno del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 4px; /* Borde redondeado del botón */
+  cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+  margin-bottom: 10px; /* Espacio inferior del botón */
+}
+
+button:hover {
+  background-color: #45a049; /* Color de fondo del botón al pasar el cursor */
+}
+
+/* Estilos para los campos de entrada */
+input[type="email"],
+input[type="text"] {
+  padding: 10px; /* Espacio interno del campo de entrada */
+  margin-bottom: 10px; /* Espacio inferior del campo de entrada */
+  width: 200px; /* Ancho del campo de entrada */
+}
+
+/* Estilos para el select */
+select {
+  width: 200px;
+  padding: 10px; /* Espacio interno del select */
+  margin-bottom: 10px; /* Espacio inferior del select */
+}
+
+/* Estilos para el div de la bandeja de entrada */
+#mailFriend {
+  border: 1px solid #ccc; /* Borde del div */
+  padding: 10px; /* Espacio interno del div */
+  margin-bottom: 20px; /* Espacio inferior del div */
+}
+
+/* Agrega estilos adicionales según sea necesario */

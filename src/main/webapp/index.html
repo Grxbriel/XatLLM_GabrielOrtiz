@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Página Inicial</title>
+</head>
+
+<body>
+  <div class="animation-overlay">
+    <div class="animation-content">
+      <h1>Bienvenido a la página inicial</h1>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="navbar-list">
+        <li><a href="html/register.html">Registrarse</a></li>
+        <li><a href="html/login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="benv">
+      <h1>Bienvenido a mi chat</h1>
+    </section>
+
+    <section class="chat-functions">
+      <h2>Funciones del Chat</h2>
+      <div class="chat-function">Función 1</div>
+      <div class="chat-function">Función 2</div>
+      <div class="chat-function">Función 3</div>
+      <div class="chat-function">Función 4</div>
+      <div class="chat-function">Función 5</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2023 - Todos los derechos reservados</p>
+      <div class="social-links">
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="drawing"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const animationOverlay = document.querySelector('.animation-overlay');
+      const body = document.querySelector('body');
+      animationOverlay.addEventListener('click', function () {
+        animationOverlay.classList.add('hidden');
+        body.classList.add('loaded');
+      });
+    });
+
+
+
+  </script>
+</body>
+
+</html>

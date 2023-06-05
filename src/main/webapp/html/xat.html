@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagina de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="../css/xat.css">
+</head>
+<body>
+    <h1>CHAT</h1>
+
+    <input type="email" name="friendMail" id="friendMail" />
+    <button onclick="agregarAmigo()">Agregar amigo</button>
+
+    <!-- Lista de amigos -->
+    <select name="receptor" id="receptor" onchange="modificarTarget()">
+        <!-- Opciones del backend -->
+    </select>
+    <br>
+    <button onclick="recibirListaDeAmigos()">Mostrar Amigos</button><br>
+    <br>  
+    <br>
+    <button onclick="logout()">Cerrar Sesion</button><br><br>
+
+    <h3>Mensaje:</h3>
+    <!-- Enviar el sms -->
+    <input type="text" name="sms" id="sms"><br><button onclick="enviarMensaje()">Enviar</button><br>
+    <br>
+    
+    <button onclick="iniciarConversacion()">Iniciar conversacion</button>
+    <!-- Bandeja de entrada -->
+    <br>
+    <div id="mailFriend">
+
+    </div>
+    
+    <script src="../js/friend.js"></script>
+    <script src="../js/xat.js"></script>
+
+</body>
+</html>

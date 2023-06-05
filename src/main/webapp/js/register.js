@@ -39,7 +39,12 @@ function getCountries() {
       console.log(data);
     }
   };
-  let url = "http://localhost:8080/Xat_war_exploded/Register?"+"";
-  xhr.open("GET", url,true);
+  let url = "";
+
+  xhr.open(
+      "GET",
+      "http://localhost:8080/Xat_war_exploded/Register?" + url,
+      true
+  );
   xhr.send();
 }

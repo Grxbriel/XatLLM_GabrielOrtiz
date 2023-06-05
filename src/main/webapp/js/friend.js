@@ -1,13 +1,13 @@
 
 function agregarAmigo() {
-  let chttp = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   let mail = sessionStorage.getItem("mail");
   let session = sessionStorage.getItem("session");
   let friendMail = document.getElementById("friendMail").value;
 
-  chttp.onreadystatechange = function () {
+  xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      let data = chttp.responseText;
+      let data = xhr.responseText;
       console.log(data);
       switch (data) {
         case "0":
@@ -31,40 +31,35 @@ function agregarAmigo() {
   let url = "mail=" + mail + "&session=" + session + "&friend=" + friendMail;
   console.log(url);
 
-  chttp.open("POST", "http://localhost:8080/Xat_war_exploded/Friend", true);
-  chttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  chttp.send(url);
+  xhr.open("POST", "http://localhost:8080/Xat_war_exploded/Friend", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.send(url);
 }
 
 function recibirListaDeAmigos() {
-  let chttp = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   let mail = sessionStorage.getItem("mail");
   let session = sessionStorage.getItem("session");
   console.log(mail + " " + session);
 
-  chttp.onreadystatechange = function () {
+  xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      let data = JSON.parse(chttp.responseText);
+      let data = JSON.parse(xhr.responseText);
       let selectElement = document.getElementById("receptor");
       selectElement.innerHTML = "";
       console.log(data[0]);
       for (let i = 0; i < data.length; i++) {
-        let option = document.createElement("option");
-        option.value = data[i];
-        option.textContent = data[i];
-        selectElement.appendChild(option);
+        let opcion = document.createElement("opcion");
+        opcion.value = data[i];
+        opcion.textContent = data[i];
+        selectElement.appendChild(opcion);
       }
     }
   };
 
-  let url = "mail=" + mail + "&session=" + session;
-
-  chttp.open(
-    "GET",
-    "http://localhost:8080/Xat_war_exploded/Friend?" + url,
-    true
-  );
-  chttp.send();
+  let url ="http://localhost:8080/Xat_war_exploded/Friend?"+ "mail=" + mail + "&session=" + session;
+  xhr.open("GET",url,true);
+  xhr.send();
 }
 
 

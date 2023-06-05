@@ -34,11 +34,7 @@
         // Capturar el evento submit del formulario
         document.getElementById("register-form").addEventListener("submit", function(event) {
             event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
-
-            // Llamar a la función para verificar las contraseñas antes de registrarse
-            if (verify_password()) {
                 registrarUsuario(); // Llamar a la función para registrar al usuario si las contraseñas coinciden
-            }
         });
 
         // Llamar a la función para obtener la lista de países disponibles

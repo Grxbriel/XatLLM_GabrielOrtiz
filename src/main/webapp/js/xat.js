@@ -53,7 +53,7 @@ function iniciarConversacion() {
 }
 
 function enviarMensaje() {
-  let chttp = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   let mail = sessionStorage.getItem("mail");
   let session = sessionStorage.getItem("session");
   let receptor = document.getElementById("receptor").value;
@@ -61,7 +61,7 @@ function enviarMensaje() {
 
   console.log(mail + " " + session + " " + " " + receptor + " " + sms);
 
-  chttp.onreadystatechange = function () {
+  xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("sms").value = "";
     }
@@ -77,21 +77,21 @@ function enviarMensaje() {
     "&sms=" +
     sms;
 
-  chttp.open("POST", "http://localhost:8080/Xat_war_exploded/Xat", true);
-  chttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  chttp.send(url);
+  xhr.open("POST", "http://localhost:8080/Xat_war_exploded/Xat", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.send(url);
 }
 
 function recibirMensaje() {
-  let chttp = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   let mail = sessionStorage.getItem("mail");
   let session = sessionStorage.getItem("session");
   console.log(mail);
   console.log(session);
 
-  chttp.onreadystatechange = function () {
+  xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      let data = JSON.parse(chttp.responseText);
+      let data = JSON.parse(xhr.responseText);
 
       if (data.emisor in con.conversaciones) {
         console.log(data);
@@ -118,6 +118,6 @@ function recibirMensaje() {
   let url = "mail=" + mail + "&session=" + session;
   console.log(url);
 
-  chttp.open("GET", "http://localhost:8080/Xat_war_exploded/Xat?" + url, true);
-  chttp.send();
+  xhr.open("GET", "http://localhost:8080/Xat_war_exploded/Xat?" + url, true);
+  xhr.send();
 }
